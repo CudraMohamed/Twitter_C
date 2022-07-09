@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cvTweets"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -21,11 +21,11 @@
             app:srcCompat="@drawable/person2" />
 
         <TextView
-            android:id="@+id/tvZibobo"
+            android:id="@+id/tvName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:text="Zibobo"
+            tools:text="Zibobo"
             app:layout_constraintStart_toEndOf="@+id/ivZibobo"
             app:layout_constraintTop_toTopOf="@+id/ivZibobo" />
 
@@ -34,16 +34,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:text="&quot;@ZiboboNgash&quot;"
-            app:layout_constraintStart_toEndOf="@+id/tvZibobo"
-            app:layout_constraintTop_toTopOf="@+id/tvZibobo" />
+            tools:text="(@)ZiboboNgash"
+            app:layout_constraintStart_toEndOf="@+id/tvName"
+            app:layout_constraintTop_toTopOf="@+id/tvName" />
 
         <TextView
             android:id="@+id/tvTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:text="17h"
+            tools:text="17h"
             app:layout_constraintStart_toEndOf="@+id/tvHashZibobo"
             app:layout_constraintTop_toTopOf="@+id/tvHashZibobo" />
 
@@ -53,57 +53,64 @@
             android:layout_height="34dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:text="They sent my offer officially!! I am now a juniour Software Developer!! This is so amazing :) "
+            tools:text="They sent my offer officially!! I am now a juniour Software Developer!! This is so amazing :) "
             app:layout_constraintStart_toEndOf="@+id/ivZibobo"
             app:layout_constraintTop_toBottomOf="@+id/tvHashZibobo" />
 
         <ImageView
-            android:id="@+id/imageView3"
+            android:id="@+id/ivComments"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toTopOf="@+id/guideline2"
-            app:srcCompat="@drawable/ic_baseline_chat_bubble_outline_24"
-            tools:layout_editor_absoluteX="72dp" />
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="4dp"
+            app:layout_constraintEnd_toStartOf="@+id/tvComCount"
+            app:layout_constraintTop_toBottomOf="@+id/ivZibobo"
+            app:srcCompat="@drawable/ic_baseline_chat_bubble_outline_24" />
 
         <TextView
             android:id="@+id/tvComCount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="153"
-            tools:layout_editor_absoluteX="104dp"
-            tools:layout_editor_absoluteY="86dp" />
+            android:layout_marginStart="4dp"
+            tools:text="153"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toTopOf="@+id/ivComments" />
 
         <ImageView
-            android:id="@+id/imageView4"
+            android:id="@+id/ivRetweet"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/ic_baseline_repeat_24"
-            tools:layout_editor_absoluteX="176dp"
-            tools:layout_editor_absoluteY="86dp" />
+            android:layout_marginEnd="4dp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline4"
+            app:layout_constraintTop_toTopOf="@+id/tvComCount"
+            app:srcCompat="@drawable/ic_baseline_repeat_24" />
 
         <TextView
             android:id="@+id/tvRetCount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="55"
-            tools:layout_editor_absoluteX="208dp"
-            tools:layout_editor_absoluteY="86dp" />
+            android:layout_marginStart="4dp"
+            tools:text="55"
+            app:layout_constraintStart_toStartOf="@+id/guideline4"
+            app:layout_constraintTop_toTopOf="@+id/ivRetweet" />
 
         <ImageView
             android:id="@+id/ivLike"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/ic_baseline_favorite_border_24"
-            tools:layout_editor_absoluteX="272dp"
-            tools:layout_editor_absoluteY="86dp" />
+            android:layout_marginEnd="4dp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline5"
+            app:layout_constraintTop_toTopOf="@+id/tvRetCount"
+            app:srcCompat="@drawable/ic_baseline_favorite_border_24" />
 
         <TextView
             android:id="@+id/tvLikeCount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="777"
-            tools:layout_editor_absoluteX="304dp"
-            tools:layout_editor_absoluteY="86dp" />
+            android:layout_marginStart="4dp"
+            tools:text="777"
+            app:layout_constraintStart_toStartOf="@+id/guideline5"
+            app:layout_constraintTop_toTopOf="@+id/ivLike" />
 
         <ImageView
             android:id="@+id/ivShare"
@@ -111,15 +118,8 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@drawable/ic_baseline_share_24"
-            tools:layout_editor_absoluteY="86dp" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.15" />
+            app:layout_constraintTop_toTopOf="@+id/tvLikeCount"
+            app:srcCompat="@drawable/ic_baseline_share_24" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline3"
